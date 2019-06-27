@@ -1,6 +1,10 @@
 import sys
 import os
 
+"""
+Function copied from Concordia university instructor
+"""
+
 def pretty_print_bands(rdd):
     out_string = ""
     # rdd contains elements in the form ((band_id, bucket_id), [ state_names ])
