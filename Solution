@@ -1,3 +1,11 @@
+"""
+
+Created on March 25, 2019
+@author: Pulkit Ghai
+
+"""
+
+
 from pyspark.rdd import RDD
 from pyspark.sql import Row
 from pyspark.sql import DataFrame
@@ -9,11 +17,6 @@ from pretty_print_bands import pretty_print_bands as ppb
 import random
 import random
 import os
-
-# Dask imports
-import dask.bag as db
-import dask.dataframe as df
-
 
 all_states = ["ab", "ak", "ar", "az", "ca", "co", "ct", "de", "dc",
               "fl", "ga", "hi", "id", "il", "in", "ia", "ks", "ky", "la",
@@ -56,7 +59,7 @@ def toCSVLine(data):
 
 def data_preparation(data_file, key, state):
     """Our implementation of LSH will be based on RDDs. As in the clustering
-    part of LA3, we will represent each state in the dataset as a dictionary of
+    part, we will represent each state in the dataset as a dictionary of
     boolean values with an extra key to store the state name.
     We call this dictionary 'state dictionary'.
 
@@ -72,7 +75,6 @@ def data_preparation(data_file, key, state):
              2) Returns the value associated with key
                 <key> in the dictionary corresponding to state <state>
 
-    *** Note: Dask may be used instead of Spark.
 
     Keyword arguments:
     data_file -- csv file of plant name/states tuples (e.g. ./data/plants.data)
